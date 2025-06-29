@@ -1,4 +1,4 @@
-name: CypressAPI
+name: CypressFront
 
 on:
   push:
@@ -31,7 +31,8 @@ jobs:
         if: always()
         run: |
           STATUS="${{ job.status }}"
+          COMMIT_MESSAGE="${{ github.event.head_commit.message }}"
           curl -H "Content-Type: application/json" \
                -X POST \
-               -d "{\"content\": \"🚨 *Workflow CypressFront finalizado com status:* **${STATUS}**\"}" \
+               -d "{\"content\": \"🧪 *Workflow CypressFront finalizado com status:* **${STATUS}**\n📝 *Commit:* ${COMMIT_MESSAGE}\"}" \
                https://discord.com/api/webhooks/1388966990130970714/4rlfI4pG2nFA6snod_8P1-XBheQjwzU35ajPzj2YfAUpKk6ZJbaDUdkmZtIsEyC_iulM
