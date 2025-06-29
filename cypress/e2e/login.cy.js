@@ -5,6 +5,6 @@ describe('Login', () => {
        cy.get('#password').type('teste')
        cy.contains('Entrar').click()
        cy.contains('Home').should('be.visible')
-       cy.contains('Bem vindo').should('be.visible')
+       cy.contains('Bem Vindo Thelma lima').should('be.visible')
     })
     })
