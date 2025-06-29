@@ -44,16 +44,10 @@ jobs:
           DURATION=$((END_TIME - START_TIME))
           DURATION_FORMATTED=$(printf "%dm %ds" $((DURATION/60)) $((DURATION%60)))
 
-          # Total de testes executados
-          TESTS=0
-          if [ -f report.json ]; then
-            TESTS=$(jq '.results[].suites[].tests | length' report.json | awk '{sum+=$1} END{print sum}')
-          fi
-
           # Enviar para o Discord
           curl -H "Content-Type: application/json" \
                -X POST \
                -d "{
-                    \"content\": \"🧪 *Cypress Tests Finalizados!*\n\n✅ *Status:* **${STATUS}**\n📝 *Commit:* ${COMMIT_MESSAGE}\n👤 *Autor:* ${AUTHOR}\n🌿 *Branch:* ${BRANCH}\n📦 *Cenários executados:* ${TESTS}\n⏱️ *Duração:* ${DURATION_FORMATTED}\n\n🔗 [Ver no GitHub Actions](${RUN_URL})\"
+                    \"content\": \"🧪 *Testes Cypress Front Finalizados!*\n\n✅ *Status:* **${STATUS}**\n📝 *Commit:* ${COMMIT_MESSAGE}\n👤 *Autor:* ${AUTHOR}\n🌿 *Branch:* ${BRANCH}\n📦 *Cenários executados:* ${TESTS}\n⏱️ *Duração:* ${DURATION_FORMATTED}\n\n🔗 [Ver no GitHub Actions](${RUN_URL})\"
                }" \
                $DISCORD_WEBHOOK
