@@ -16,5 +16,5 @@ Cypress.Commands.add('Produtos',()=>{
       cy.get('#price').type('230.000')
       cy.get('#quantity').type('1')
       cy.get('#imagem').as('fileInput').attachFile('Rampage.png')
-      cy.contains('Cadastrar').click()
+      cy.get('[data-testid="cadastarProdutos"]').click()
 })

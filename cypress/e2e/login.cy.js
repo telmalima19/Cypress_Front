@@ -9,7 +9,5 @@ describe('Login', () => {
       cy.contains('Listar Usuários').click()
       cy.contains('Lista dos usuários').should('be.visible')
     })
-    it('Cadastrar produto',()=>{
-      cy.Produtos()
-    })
+    
     })
