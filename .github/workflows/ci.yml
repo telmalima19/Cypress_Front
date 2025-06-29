@@ -33,5 +33,5 @@ jobs:
           STATUS="${{ job.status }}"
           curl -H "Content-Type: application/json" \
                -X POST \
-               -d "{\"content\": \"🚨 *Workflow CypressAPI finalizado com status:* **${STATUS}**\"}" \
+               -d "{\"content\": \"🚨 *Workflow CypressFront finalizado com status:* **${STATUS}**\"}" \
                https://discord.com/api/webhooks/1388966990130970714/4rlfI4pG2nFA6snod_8P1-XBheQjwzU35ajPzj2YfAUpKk6ZJbaDUdkmZtIsEyC_iulM
