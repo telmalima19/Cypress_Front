@@ -6,3 +6,15 @@ Cypress.Commands.add('Login',()=>{
     cy.contains('Home').should('be.visible')
     cy.contains('Bem Vindo Thelma lima').should('be.visible')
 })
+Cypress.Commands.add('Produtos',()=>{
+    
+      cy.visit('https://front.serverest.dev/admin/home')
+      cy.contains('Cadastrar Produtos').click()
+      cy.contains('Cadastro de Produtos').should('be.visible')
+      cy.get('#nome').type('Rampage')
+      cy.get('#description').type('Rampage Cinza')
+      cy.get('#price').type('230.000')
+      cy.get('#quantity').type('1')
+      cy.get('#imagem').as('fileInput').attachFile('Rampage.png')
+      cy.contains('Cadastrar').click()
+})
