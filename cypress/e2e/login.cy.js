@@ -1,10 +1,12 @@
 describe('Login', () => {
-  it('Login', () => {
-    cy.visit('https://front.serverest.dev/login')
-       cy.get('#email').type('Thelma.lima@qa.com.br')
-       cy.get('#password').type('teste')
-       cy.contains('Entrar').click()
-       cy.contains('Home').should('be.visible')
-       cy.contains('Bem Vindo Thelma lima').should('be.visible')
+  beforeEach(() => {
+    cy.session('usuario',() => {
+    cy.Login()
+    })
+    })
+    it('Listar usuarios',()=>{
+      cy.visit('https://front.serverest.dev/admin/home')
+      cy.contains('Listar Usuários').click()
+      cy.contains('Lista dos usuários').should('be.visible')
     })
     })

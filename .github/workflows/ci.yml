@@ -48,6 +48,6 @@ jobs:
           curl -H "Content-Type: application/json" \
                -X POST \
                -d "{
-                    \"content\": \"🧪 *Testes Cypress Front Finalizados!*\n\n✅ *Status:* **${STATUS}**\n📝 *Commit:* ${COMMIT_MESSAGE}\n👤 *Autor:* ${AUTHOR}\n🌿 *Branch:* ${BRANCH}\n📦 *Cenários executados:* ${TESTS}\n⏱️ *Duração:* ${DURATION_FORMATTED}\n\n🔗 [Ver no GitHub Actions](${RUN_URL})\"
+                    \"content\": \"🧪 *Testes Cypress Front Finalizados!*\n\n✅ *Status:* **${STATUS}**\n📝 *Commit:* ${COMMIT_MESSAGE}\n👤 *Autor:* ${AUTHOR}\n🌿 *Branch:* ${BRANCH}\n⏱️ *Duração:* ${DURATION_FORMATTED}\n\n🔗 [Ver no GitHub Actions](${RUN_URL})\"
                }" \
                $DISCORD_WEBHOOK
